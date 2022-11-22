@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'qoutes.dart';
+import 'quote_card.dart';
 void main() => runApp(MaterialApp(
   home: QoutesList(),
 ));
@@ -15,35 +16,7 @@ class _QoutesListState extends State<QoutesList> {
     Quotes(text: 'The way to get started is to quit talking and begin doing.',author: 'Walt Disney'),
     Quotes(text: 'The greatest glory in living lies not in never falling, but in rising every time we fall.', author: 'Mandela')
   ];
-  Widget qouteTemplate(qoute){
-    return Card(
-      margin: EdgeInsets.fromLTRB(15,15,15,0),
-      child:Padding(
-        padding: EdgeInsets.all(10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Text(
-            qoute.text,
-            style: TextStyle(
-              color: Colors.grey,
-              fontSize: 18
-            ),
-          ),
-          SizedBox(height: 6,),
-          Text(
-            qoute.author,
-            style: TextStyle(
-                color: Colors.black87,
-                fontSize: 20,
-              fontWeight: FontWeight.bold
-            ),
-          ),
-        ],
-      ),
-      ),
-    );
-  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +34,14 @@ class _QoutesListState extends State<QoutesList> {
         backgroundColor: Colors.amberAccent,
       ),
       body: Column(
-        children: qoutes.map((q) => qouteTemplate(q)).toList(),
+        children: qoutes.map((q) => QuoteCard(
+            quote:q,
+        delete:(){
+              setState(() {
+                qoutes.remove(q);
+              });
+        }
+        )).toList(),
       ),
     );
   }
