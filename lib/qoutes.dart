@@ -1,9 +1,6 @@
-class Qoutes{
-  String author;
-  String text;
+class Quotes {
+  late String text;
+  late String author;
 
-  Qoutes({String author, Steing text}){
-    this.author=author;
-    this.text=text;
-  }
+  Quotes({required this.text, required this.author});
 }

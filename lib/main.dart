@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'qoutes.dart';
 void main() => runApp(MaterialApp(
   home: QoutesList(),
 ));
@@ -10,10 +10,10 @@ class QoutesList extends StatefulWidget {
 }
 
 class _QoutesListState extends State<QoutesList> {
-  List<String> qoutes = [
-    'Unshakable faith shakes up everything!',
-    'I live for the moments I dare to be me inspite of all that I "should" be',
-        'Authenticity is an act of social justice.'
+  List<Quotes> qoutes = [
+    Quotes(author: ' Kierra C.T. Banks', text: 'I aspire to be a woman that inspires by being.'),
+    Quotes(text: 'The way to get started is to quit talking and begin doing.',author: 'Walt Disney'),
+    Quotes(text: 'The greatest glory in living lies not in never falling, but in rising every time we fall.', author: 'Mandela')
   ];
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class _QoutesListState extends State<QoutesList> {
         backgroundColor: Colors.amberAccent,
       ),
       body: Column(
-        children: qoutes.map((q) => Text(q)).toList(),
+        children: qoutes.map((q) => Text('${q.text}-${q.author}')).toList(),
       ),
     );
   }
