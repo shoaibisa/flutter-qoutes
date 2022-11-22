@@ -19,7 +19,7 @@ class QuoteCard extends StatelessWidget {
               quote.text,
               style: TextStyle(
                   color: Colors.grey,
-                  fontSize: 18
+                  fontSize: 14
               ),
             ),
             SizedBox(height: 6,),
@@ -27,7 +27,7 @@ class QuoteCard extends StatelessWidget {
               quote.author,
               style: TextStyle(
                   color: Colors.black87,
-                  fontSize: 20,
+                  fontSize: 16,
                   fontWeight: FontWeight.bold
               ),
             ),

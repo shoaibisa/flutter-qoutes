@@ -14,7 +14,8 @@ class _QoutesListState extends State<QoutesList> {
   List<Quotes> qoutes = [
     Quotes(author: ' Kierra C.T. Banks', text: 'I aspire to be a woman that inspires by being.'),
     Quotes(text: 'The way to get started is to quit talking and begin doing.',author: 'Walt Disney'),
-    Quotes(text: 'The greatest glory in living lies not in never falling, but in rising every time we fall.', author: 'Mandela')
+    Quotes(text: 'Life is what happens when you`re busy making other plans.', author: 'John Lennon'),
+    Quotes(text: 'If you set your goals ridiculously high and it`s a failure, you will fail above everyone else`s success.', author: 'James Cameron')
   ];
 
   @override
